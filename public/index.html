@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phòng Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>imessage</h2>
+
+    <div id="login">
+      <input id="username" placeholder="Tên của bạn">
+      <input id="room" placeholder="Tên phòng">
+      <button onclick="joinRoom()">Tham gia phòng</button>
+    </div>
+
+    <div id="chat" style="display:none;">
+      <div id="room-name"></div>
+
+      <div>
+        <strong>👥 Người trong phòng:</strong>
+        <ul id="user-list"></ul>
+      </div>
+
+      <ul id="messages"></ul>
+
+      <form id="form">
+        <input id="input" autocomplete="off" placeholder="Nhập tin nhắn..." />
+        <button>Gửi</button>
+      </form>
+
+      <div id="notice"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "name": "chat-app",
+    "version": "1.0.0",
+    "description": "Ứng dụng phòng chat thời gian thực",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.21.2",
+      "socket.io": "^4.8.1"
+    },
+    "author": "CongToanTH28.43",
+    "license": "ISC"
+  }
+  
