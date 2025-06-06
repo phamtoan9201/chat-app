@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Phòng Chat</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h2>imessage</h2>
 
+    <!-- FORM ĐĂNG NHẬP -->
     <div id="login">
-      <input id="username" placeholder="Tên của bạn">
-      <input id="room" placeholder="Tên phòng">
+      <div class="inputbox">
+        <input id="username" required />
+        <label for="username">Tên của bạn</label>
+      </div>
+
+      <div class="inputbox">
+        <input id="room" required />
+        <label for="room">Tên phòng</label>
+      </div>
+
+      <div class="inputbox">
+        <input id="roomPassword" type="password" />
+        <label for="roomPassword">Mật khẩu phòng (nếu có)</label>
+      </div>
+
       <button onclick="joinRoom()">Tham gia phòng</button>
     </div>
 
+    <!-- PHÒNG CHAT -->
     <div id="chat" style="display:none;">
       <div id="room-name"></div>
 
       <div>
-        <strong>👥 Người trong phòng:</strong>
+        <strong style="color: white;">👥 Người trong phòng:</strong>
         <ul id="user-list"></ul>
       </div>
 
       <ul id="messages"></ul>
 
+      <!-- Biểu tượng emoji -->
+      <div id="emoji-picker" class="emoji-picker">
+        <!-- Emoji đơn giản -->
+        <span class="emoji">😀</span>
+        <span class="emoji">😂</span>
+        <span class="emoji">😍</span>
+        <span class="emoji">😢</span>
+        <span class="emoji">👍</span>
+        <span class="emoji">🙏</span>
+        <span class="emoji">🔥</span>
+      </div>
+
       <form id="form">
         <input id="input" autocomplete="off" placeholder="Nhập tin nhắn..." />
-        <button>Gửi</button>
+        <button type="button" id="btnEmoji">😊</button>
+
+        <!-- Input gửi file hình ảnh -->
+        <input type="file" id="imageInput" accept="image/*" style="display:none;" />
+        <button type="button" id="btnImage">📷</button>
+
+        <button type="submit">Gửi</button>
       </form>
 
       <div id="notice"></div>
